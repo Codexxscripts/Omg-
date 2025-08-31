@@ -1,57 +1,6 @@
-do
-	local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))();
-	local Players = game:GetService("Players");
-	local RunService = game:GetService("RunService");
-	local ReplicatedStorage = game:GetService("ReplicatedStorage");
-	local Workspace = game:GetService("Workspace");
-	local CurrentCamera = Workspace.CurrentCamera;
-	local LocalPlayer = Players.LocalPlayer;
-	local CoreGui = game:GetService("CoreGui");
-	function gradient(text, startColor, endColor)
-		local result = "";
-		local length = #text;
-		for i = 1, length do
-			local t = (i - 1) / math.max(length - 1 , 1) ;
-			local r = math.floor((startColor.R + ((endColor.R - startColor.R) * t)) * 255 );
-			local g = math.floor((startColor.G + ((endColor.G - startColor.G) * t)) * 255 );
-			local b = math.floor((startColor.B + ((endColor.B - startColor.B) * t)) * 255 );
-			local char = text:sub(i, i);
-			result = result   .. '<font color=\"rgb('   .. r   .. ", "   .. g   .. ", "   .. b   .. ')\">'   .. char   .. "</font>" ;
-		end
-		return result;
-	end
-	local Confirmed = false;
-	WindUI:Popup({
-		Title = gradient("TravHub", Color3.fromHex("#eb1010"), Color3.fromHex("#1023eb")),
-		Icon = "info",
-		Content = gradient("This script made by", Color3.fromHex("#10eb3c"), Color3.fromHex("#67c97a"))   .. gradient(" TravHub", Color3.fromHex("#001e80"), Color3.fromHex("#16f2d9")) ,
-		Buttons = {
-			{
-				Title = gradient("Cancel", Color3.fromHex("#e80909"), Color3.fromHex("#630404")),
-				Callback = function()
-				end,
-				Variant = "Tertiary"
-			},
-			{
-				Title = gradient("Load", Color3.fromHex("#90f09e"), Color3.fromHex("#13ed34")),
-				Callback = function()
-					Confirmed = true;
-				end,
-				Variant = "Secondary"
-			}
-		}
-	});
-	repeat
-		task.wait();
-	until Confirmed
-	WindUI:Notify({
-		Title = gradient("TravHub", Color3.fromHex("#eb1010"), Color3.fromHex("#1023eb")),
-		Content = "Script successfully loaded!",
-		Icon = "check-circle",
-		Duration = 3
-	});
+
 	local Window = WindUI:CreateWindow({
-		Title = gradient("TravHub [SUMMER UPDATE]", Color3.fromHex("#001e80"), Color3.fromHex("#ffea00")),
+		Title = gradient("@Codexxscripts", Color3.fromHex("#880000"), Color3.fromHex("#880000")),
 		Icon = "infinity",
 		Author = gradient("Murder Mystery 2", Color3.fromHex("#1bf2b2"), Color3.fromHex("#1bcbf2")),
 		Folder = "WindUI",
@@ -63,11 +12,11 @@ do
 		HasOutline = true
 	});
 	Window:EditOpenButton({
-		Title = "Open UI",
+		Title = "Open Script",
 		Icon = "monitor",
 		CornerRadius = UDim.new(2, 6),
 		StrokeThickness = 2,
-		Color = ColorSequence.new(Color3.fromHex("1E213D"), Color3.fromHex("1F75FE")),
+		Color = ColorSequence.new(Color3.fromHex("880000"), Color3.fromHex("880000")),
 		Draggable = true
 	});
 	local Tabs = {
